@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cassino Lusitano — Boas-vindas</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#00d15a;
+      --bg:#071126;
+      --card:#0f2130;
+      --muted:#98a4b3;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg, #031021 0%, #071126 60%);}
+    .container{max-width:1200px;margin:40px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#0fb6a8,#006ee6);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;box-shadow:0 6px 18px rgba(2,8,23,.6)}
+    h1{margin:0;font-size:20px}
+    .nav-cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#042028;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none}
+
+    .hero{margin-top:28px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:14px;display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
+    .hero-left h2{font-size:34px;margin:0 0 12px}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .features{display:flex;gap:10px;flex-wrap:wrap}
+    .feature{background:var(--glass);padding:10px 12px;border-radius:12px;font-weight:600}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(3,10,20,.6)}
+    .hero-right{display:flex;flex-direction:column;gap:14px}
+    .promo{font-weight:800;font-size:22px;color:#00ff85;text-shadow:0 0 12px rgba(0,255,133,0.6)}
+
+    .countdown{margin-top:12px;font-size:20px;font-weight:700;color:#00ff85;text-align:center;text-shadow:0 0 10px rgba(0,255,133,.6)}
+
+    .whatsapp-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:linear-gradient(180deg,var(--accent),#02b44a);color:#042028;font-weight:800;text-decoration:none;box-shadow:0 12px 30px rgba(2,30,24,.2)}
+    .whatsapp-btn svg{width:20px;height:20px}
+
+    .form-row{display:flex;gap:8px}
+    input,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+
+    .games{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .game-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px}
+    .game-card h4{margin:8px 0 0}
+
+    footer{margin-top:36px;color:var(--muted);font-size:13px;text-align:center}
+
+    .wa-fixed{position:fixed;right:22px;bottom:22px;z-index:999}
+    .wa-fab{display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,var(--accent),#02b44a);padding:14px 18px;border-radius:999px;color:#042028;font-weight:800;box-shadow:0 12px 30px rgba(2,30,24,.25);text-decoration:none}
+    .wa-circle{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.12)}
+
+    @media(max-width:880px){
+      .hero{grid-template-columns:1fr;padding:18px}
+      .games{grid-template-columns:repeat(2,1fr)}
+      .container{margin:20px}
+    }
+    @media(max-width:520px){
+      .games{grid-template-columns:1fr}
+      .nav-cta{display:none}
+      .hero-left h2{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">CL</div>
+        <div>
+          <h1>Cassino Lusitano</h1>
+          <div style="color:var(--muted);font-size:13px">A experiência de jogo com alma portuguesa</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <div class="card">
+          <h2>Bónus de €200 no primeiro acesso!</h2>
+          <p class="lead">Receba até <strong style="color:#00ff85">200 euros</strong> logo no seu primeiro acesso ao Cassino Lusitano. Registe-se facilmente pelo WhatsApp, fale com o nosso assistente e comece já a jogar com saldo extra.</p>
+
+          <div class="features">
+            <div class="feature">+Apostas ao vivo</div>
+            <div class="feature">Suporte por WhatsApp</div>
+            <div class="feature">Promoções semanais</div>
+            <div class="feature">Levantamento rápido</div>
+          </div>
+
+          <div style="margin-top:16px">
+            <a class="whatsapp-btn" id="wa-hero" href="#" onclick="openWhatsApp(event)">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48a11 11 0 10-15.56 15.56L2 22l3.1-.7A11 11 0 0020.52 3.48z" fill="#042028" opacity="0.06"/><path d="M17.472 6.528a7.2 7.2 0 00-10.184 10.184l-.6 2.04 2.06-.56a7.2 7.2 0 0010.724-11.664z" fill="#042028"/><path d="M12.6 17.1c-1.75 0-3.38-.46-4.82-1.25l-.35-.2-2.86.77.77-2.78-.22-.36A8.6 8.6 0 1118 18.6a8.52 8.52 0 01-5.4-1.5z" fill="white"/></svg>
+              Registar pelo WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card">
+          <div class="promo">Oferta Exclusiva: €200 de Bónus no 1º Acesso + 50 Giros</div>
+          <p class="lead" style="margin-top:8px">Preencha os seus dados e clique em "Concluir pelo WhatsApp" para falar com o nosso assistente e garantir o seu bónus de <strong style="color:#00ff85">200 euros</strong>.</p>
+
+          <!-- contador -->
+          <div class="countdown" id="countdown">Oferta expira em 10:00</div>
+
+          <div style="margin-top:10px">
+            <label for="nome">Nome completo</label>
+            <input id="nome" placeholder="Ex.: João Silva" />
+          </div>
+
+          <div style="margin-top:10px" class="form-row">
+            <div style="flex:1">
+              <label for="pais">País</label>
+              <select id="pais"><option value="PT">Portugal</option><option value="BR">Brasil</option></select>
+            </div>
+            <div style="width:150px">
+              <label for="telefone">Telemóvel</label>
+              <input id="telefone" placeholder="912345678" />
+            </div>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <a class="btn" id="finalizar" href="#" onclick="openWhatsApp(event, true)">Concluir pelo WhatsApp</a>
+            <a class="btn" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)" href="#jogar">Explorar jogos</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>Porquê o Cassino Lusitano?</strong>
+          <p class="lead" style="margin-top:8px">Localizado no coração da comunidade portuguesa online — suporte em PT-PT, pagamentos locais e ofertas adaptadas ao mercado.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="jogar" class="games">
+      <div class="game-card card">
+        <h4>Slot: Tesouros do Atlântico</h4>
+        <p style="color:var(--muted);margin:6px 0 0">Tema português com símbolos tradicionais.</p>
+      </div>
+      <div class="game-card card">
+        <h4>Roleta ao vivo</h4>
+        <p style="color:var(--muted);margin:6px 0 0">Croupiers profissionais e mesa exclusiva.</p>
+      </div>
+      <div class="game-card card">
+        <h4>Blackjack</h4>
+        <p style="color:var(--muted);margin:6px 0 0">Mesas com limites baixos e altos.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© Cassino Lusitano – Jogue com responsabilidade. Apenas para maiores de 18 anos.</div>
+      <div style="margin-top:6px;color:var(--muted);font-size:12px">Termos e Condições aplicam-se. Política de privacidade disponível aquando do registo.</div>
+    </footer>
+  </div>
+
+  <a id="wa-fixed" class="wa-fixed" href="#" onclick="openWhatsApp(event)">
+    <div class="wa-fab">
+      <div class="wa-circle">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48a11 11 0 10-15.56 15.56L2 22l3.1-.7A11 11 0 0020.52 3.48z" fill="#042028" opacity="0.08"/><path d="M17.472 6.528a7.2 7.2 0 00-10.184 10.184l-.6 2.04 2.06-.56a7.2 7.2 0 0010.724-11.664z" fill="#042028"/><path d="M12.6 17.1c-1.75 0-3.38-.46-4.82-1.25l-.35-.2-2.86.77.77-2.78-.22-.36A8.6 8.6 0 1118 18.6a8.52 8.52 0 01-5.4-1.5z" fill="white"/></svg>
+      </div>
+      <div>Falar com assistente</div>
+    </div>
+  </a>
+
+  <script>
+    const WHATSAPP_NUMBER = '+61992610629';
+
+    function openWhatsApp(e, fromForm=false){
+      e.preventDefault();
+      const nome = document.getElementById('nome')?.value?.trim() || '';
+      const telefone = document.getElementById('telefone')?.value?.trim() || '';
+      const pais = document.getElementById('pais')?.value || 'PT';
+
+      let msg = 'Olá! Quero registar-me no Cassino Lusitano e aproveitar o bónus de 200 euros. ';
+      if(fromForm){
+        if(!nome || !telefone){
+          alert('Por favor, preencha o nome e telemóvel antes de continuar.');
+          return;
+        }
+        msg += `Chamo-me ${nome} e o meu telemóvel é ${telefone}. Sou de ${pais}.`;
+      } else {
+        msg += 'Preciso de ajuda para concluir o registo.';
+      }
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Contador regressivo de 10 minutos
+    let time = 10 * 60; // 10 minutos em segundos
+    const countdownEl = document.getElementById('countdown');
+
+    function updateCountdown(){
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      countdownEl.textContent = `Oferta expira em ${minutes}:${seconds.toString().padStart(2,'0')}`;
+      if(time > 0){
+        time--;
+      } else {
+        countdownEl.textContent = "Oferta expirada!";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
